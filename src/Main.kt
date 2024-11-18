@@ -3,7 +3,24 @@ fun main() {
 
     //tiposVariables()
     //variablesSinTipo()
-    variablesConTipo()
+    //variablesConTipo()
+    concatenacion()
+
+}
+
+
+
+fun concatenacion(){
+    val saludo: String = "Hola me llamo " // se puede poner var (definir variables si no cambia mejor val) o val--> (para definir constantes)
+    val nombre: String = "Edu"
+    println("$saludo $nombre") // para accederr a string se pone $ delante
+    val introduccion = "El resultado de "
+    val plus = "más"
+    val primerNumero:Int = 2
+    val segundoNumero:Int = 5
+    println("$introduccion $primerNumero $plus $segundoNumero es: ${primerNumero + segundoNumero}")
+    println(introduccion + " " + primerNumero + " "+ plus + " " + segundoNumero + " es: "
+    + (primerNumero + segundoNumero))
 }
 
 fun variablesSinTipo(){
