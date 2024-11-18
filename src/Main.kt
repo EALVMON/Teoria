@@ -4,7 +4,10 @@ fun main() {
     //tiposVariables()
     //variablesSinTipo()
     //variablesConTipo()
-    concatenacion()
+    //concatenacion()
+    ejercicio1pag37()
+    ejercicio2pag37()
+    ejercicio3pag37()
 
 }
 
@@ -90,4 +93,14 @@ fun tiposVariables(){
     // en el formato de varible en este caso String?
     var nombre: String? =null
 
+}
+// Ejercicios de los apuntes
+fun ejercicio1pag37(){
+    println("Me llamo Edu")
+}
+fun ejercicio2pag37(){
+    println("Mi Apellido es Alvarez")
+}
+fun ejercicio3pag37(){
+    println("Tengo 51 años")
 }
