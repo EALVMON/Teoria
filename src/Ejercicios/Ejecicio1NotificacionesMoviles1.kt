@@ -1,12 +1,14 @@
+package Ejercicios
+
 fun main(){
-    Ejercicios.notificaciones(56)
-    Ejercicios.notificaciones(102)
+    notificaciones(56)
+    notificaciones(102)
 
-    Ejercicios.notificaciones2(3000)
-    Ejercicios.notificaciones2(32)
+    notificaciones2(3000)
+    notificaciones2(32)
 
-    Ejercicios.notificaciones3(1000)
-    Ejercicios.notificaciones3(85)
+    notificaciones3(1000)
+    notificaciones3(85)
 }
 
 fun notificaciones (numero: Int){
