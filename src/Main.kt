@@ -5,9 +5,12 @@ fun main() {
     //variablesSinTipo()
     //variablesConTipo()
     //concatenacion()
-    ejercicio1pag37()
-    ejercicio2pag37()
-    ejercicio3pag37()
+    //ejercicio1pag37()
+    //ejercicio2pag37()
+    //ejercicio3pag37()
+    //ejercicio2pag37_1("Alvarez")
+    //println(obtenetTexto())
+    obtenerNombreMesWhen(1)
 
 }
 
@@ -103,4 +106,33 @@ fun ejercicio2pag37(){
 }
 fun ejercicio3pag37(){
     println("Tengo 51 años")
+}
+fun ejercicio2pag37_1(apellido: String){
+    println("Mi Apellido es $apellido")
+}
+
+fun obtenetTexto():String{
+    return "Esto es un texto cualquiera"
+}
+
+fun obtenerNombreMesWhen(numeroMes: Int){
+    when(numeroMes){
+
+        1 -> println("Enero")
+        2 -> println("Febreo")
+        3 -> println("Marzo")
+        4 -> println("Abril")
+        5 -> println("Mayo")
+        6 -> println("Junio")
+        7 -> println("Julio")
+        8 -> println("Agosto")
+        9-> println("Septiembre")
+        10 -> println("Octubre")
+        11 -> println("Noviembre")
+        12 -> println("Diciembre")
+        else -> {
+            println("No ha introducido un numero de mes correcto")
+        }
+
+    }
 }
