@@ -136,3 +136,6 @@ fun obtenerNombreMesWhen(numeroMes: Int){
 
     }
 }
+
+// Para leer es muy parecido a Java con el objeto system,in
+

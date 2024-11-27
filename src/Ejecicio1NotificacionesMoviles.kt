@@ -11,10 +11,10 @@ fun main(){
 
 fun notificaciones (numero: Int){
     when(numero){
-
         in 0..99 -> println ("Tienes  $numero notificaciones.")
-       !in 0..99 -> println("¡ Tu telefono esta explotando! Tienes 99+ notificaciones.")
+        !in 0..99 -> println("¡ Tu telefono esta explotando! Tienes 99+ notificaciones.")
     }
+
 
     }
 
