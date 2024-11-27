@@ -1,3 +1,4 @@
+import java.util.Scanner
 
 fun main() {
 
@@ -10,7 +11,8 @@ fun main() {
     //ejercicio3pag37()
     //ejercicio2pag37_1("Alvarez")
     //println(obtenetTexto())
-    obtenerNombreMesWhen(1)
+    //obtenerNombreMesWhen(1)
+    entradaReadLine()
 
 }
 
@@ -138,4 +140,58 @@ fun obtenerNombreMesWhen(numeroMes: Int){
 }
 
 // Para leer es muy parecido a Java con el objeto system,in
+
+fun entradaConScanner(){
+
+    //inicializar scanner
+    val scanner =Scanner(System.`in`)
+
+    //leer una linea
+
+    val linea = scanner.nextLine()
+    println(linea)
+
+    // Leer un string
+
+    val string = scanner.next()
+    println(string)
+
+    // leer un numero entero
+
+    val numero = scanner.nextInt()
+    println(numero)
+}
+
+fun entradaReadLine(){
+    // es mejor que el  anterior para leer
+    println( "Introduce tu nombre")
+    val nombre =readln() // leer string
+
+    // lee un string y lo convierte a numero
+    println( "Introduce tu edad")
+    val edad = readln().toInt()
+
+    println( "Hola, $nombre y mi edad es $edad años")
+}
+fun arrays(){
+
+    // como se definen
+
+    val semana = arrayOf("Lunes","martes","Miercoles", "Jueves","Viernes","sabado","domingo")
+    println(semana.get(0))
+    println(semana[1])
+   // println(semana[7]) produce excepcion ya que va del 0 al 6
+    // modificar datos de las posiciones que ya existen
+    println("Tamaño del array" + semana.size)
+    semana.set(0, "Luessss") // modifico
+    println(semana[0])
+    // lo que no deja es meter mas datos de los declarados en el array al principio
+    // mi array lo cree de 7 elementos y no puedo ni quitar ni añadir en este tipo de arrays
+    val numeros = (0..100).toList() // Convierte el rango a una lista
+    println(numeros[0]) // Ahora puedes acceder al primer elemento
+
+
+
+
+}
 

@@ -6,6 +6,10 @@ fun main(){
     obtenerPrecioEntrada(61)
 
    obtenerPrecioEntrada(102)
+
+    println( "Introduce tu edad")
+    val edad = readln().toInt()
+    obtenerPrecioEntrada(edad)
 }
 
 fun obtenerPrecioEntrada(edad: Int){

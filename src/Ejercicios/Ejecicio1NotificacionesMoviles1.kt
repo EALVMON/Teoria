@@ -1,14 +1,20 @@
 package Ejercicios
 
 fun main(){
-    notificaciones(56)
-    notificaciones(102)
 
-    notificaciones2(3000)
-    notificaciones2(32)
+    println( "Introduce tus notificaciones")
+    val notificaciones = readln().toInt()
 
-    notificaciones3(1000)
-    notificaciones3(85)
+    notificaciones(notificaciones)
+
+    //notificaciones(56)
+    //notificaciones(102)
+
+    //notificaciones2(3000)
+    //notificaciones2(32)
+
+    //notificaciones3(1000)
+    //notificaciones3(85)
 }
 
 fun notificaciones (numero: Int){
