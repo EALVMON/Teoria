@@ -1,28 +1,34 @@
 package Ejercicios_Profesora
 
 fun main(){
-    ConversorCaF(27.0)
-    ConversorKaC(350.0)
-    ConversorFaC(10.0)
+    conversorTemperatura()
+
 }
 
 
-fun ConversorCaF(temperatura: Double) {
-    var fa: Double
-    fa = ((9 * temperatura) / 5) + 32
-    val media = String.format("%.2f",fa)
-    println("$temperatura grados celsius son $media grados Fahrenheit")
-}
-fun ConversorKaC(temperaturak: Double){
-    var ce: Double
-    ce = temperaturak -273.15
-    val media = String.format("%.2f",ce)
-    println("$temperaturak grados Kelvin son $media grados Celsius")
+fun conversorTemperatura() {
+    println( "Introduce los grados:" )
+    var grados = readln().toDouble()
+
+    println( "Introduce la Escala Inicial:" )
+    var escalaInicial = readln().toString()
+
+    println( "Introduce la Escala Final:" )
+    var escalaFianl = readln().toString()
+
+    convertirTemperatura(grados, escalaInicial, escalaFianl)
 
 }
-fun ConversorFaC(temperaturaf: Double){
-    var fa: Double
-    fa = ((5 * (temperaturaf-32) / 9) + 273.15)
-    val media = String.format("%.2f",fa) // me saca dos decimales
-    println("$temperaturaf grados Kelvin son $media grados Celsius")
+
+
+fun convertirTemperatura(grados:Double, escalaInicial: String, escalaFianl:String) {
+
+    val medida: Double = when (escalaInicial){
+        "Celsius" -> 9.0 / 5.0 * grados + 32
+        "Kelvin" -> grados-273.15
+        else ->  5.0/9.0 * (grados-32)+ 273.15
+    }
+    val medidadFinal = String.format("%.2f", medida)
+    println("$grados grados $escalaInicial son $medidadFinal grados  $escalaFianl")
+
 }
