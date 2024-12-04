@@ -12,7 +12,9 @@ fun main() {
     //ejercicio2pag37_1("Alvarez")
     //println(obtenetTexto())
     //obtenerNombreMesWhen(1)
+    arrays()
     entradaReadLine()
+    mapasInmutable()
 
 }
 
@@ -162,17 +164,7 @@ fun entradaConScanner(){
     println(numero)
 }
 
-fun entradaReadLine(){
-    // es mejor que el  anterior para leer
-    println( "Introduce tu nombre")
-    val nombre =readln() // leer string
 
-    // lee un string y lo convierte a numero
-    println( "Introduce tu edad")
-    val edad = readln().toInt()
-
-    println( "Hola, $nombre y mi edad es $edad años")
-}
 fun arrays(){
 
     // como se definen
@@ -189,9 +181,191 @@ fun arrays(){
     // mi array lo cree de 7 elementos y no puedo ni quitar ni añadir en este tipo de arrays
     val numeros = (0..100).toList() // Convierte el rango a una lista
     println(numeros[0]) // Ahora puedes acceder al primer elemento
+    // recorrer array por posicion
+    for (posicion in semana.indices){
+        println(semana.get(posicion))
 
+    }
 
+    // recorrer en una sola interacion ver la posicion y el valor que tiene
+    for ((posicion,valor) in semana.withIndex()) {
+        println(" la posicion $posicion y tiene el $valor ")
+
+    }
+
+    // Recorrer obteniendo directamente el valor
+
+    for (valor in semana){
+        println(" El Valor es $valor")
+        println(valor)
+
+    }
 
 
 }
+fun entradaReadLine(){
+    // es mejor que el  anterior para leer
+    println( "Introduce tu nombre")
+    val nombre =readln() // leer string
+
+    // lee un string y lo convierte a numero
+    println( "Introduce tu edad")
+    val edad = readln().toInt()
+
+    println( "Hola, $nombre y mi edad es $edad años")
+}
+// listas Inmutables
+
+    fun listasInmutables(){
+
+        val semana : List<String> = listOf("Lunes","martes","Miercoles", "Jueves","Viernes","sabado","domingo")
+        // funciones mas habituales
+        println(semana.get(0)) // nos devuelve el elemento de la posicion 0
+        println ("Tamaño de laq Lista:" + semana.size)
+        println("Primer elemento " + semana.first()) // primer elemento
+        println("Ultimo elemento " +semana.last()) // segundo elemento
+
+    }
+
+// Los hay mutables e inmutables
+
+fun mapasInmutable (){ // la clave es unica
+    val mapa = mapOf(1 to "uno", 2 to "dos", 3 to "tres") // esta formado por pares de datos CLAVE y valore
+    println (mapa.entries)
+    println(mapa.keys)
+    println(mapa.values)
+    println(mapa.count() + mapa.size)
+    println(mapa[1])
+    println(mapa.getValue(1))
+
+}
+
+fun mapasMutable (){ // la clave es unica
+    val mapa = mutableMapOf<Int, String>()
+    mapa.put(1,"UNO")
+    mapa.put(2,"DOS")
+    mapa.put(3,"TRES")
+    println(mapa)
+    mapa.put(1,"ONE") // MACHACA EL VALOR YA QUE LA CLAVE ES UNICA
+    println(mapa)
+    for (numero in mapa){ // lo recorro
+        println("${numero.key}- ${numero.value}")
+
+    }
+
+    // ver los apuntes hay mas metodos
+
+}
+
+// Listas mutables son las mas utilizadas pero menos eficientes
+
+fun listasMutables() {
+    val semana: MutableSet<String> =
+        mutableSetOf("Lunes", "martes", "Miercoles", "Jueves", "Viernes") // tambien se puede poner listOf
+// otra forma de crear listas mutables
+
+    val semana1: ArrayList<String> = arrayListOf("Lunes", "martes", "Miercoles", "Jueves", "Viernes")
+// añadir y eleminar elementos
+
+    semana.add("Domingo") // al fijnal de la lista
+    semana1.add( 5, "Sabado") // lo añado en la posicion 5
+
+
+
+
+    if (semana.none()) { // si no tiene elementos
+        println("Lista vacia")
+    }
+    println(semana.first())
+    println(semana.firstOrNull())// si no hay nada nos devuelve null mejor asi poara que no tengamos errores si no hay nada
+    println(semana1.elementAtOrNull(4))
+
+    // quiero obtener los dias de la semana que empiezen por M
+    val resultado = semana1.filter {
+        it [0].lowercase() == "M".lowercase() // me da igual que la M este ne mayuscula o en miniscula
+        // It es una variable interna que tiene kotlin y esta en alfuna funciones filter que es una funcion como en esta y repersenta cada uno de los elementos
+        it == "sabado " || it =="domingo" // en resulatdo guarda una lista con los reltados
+    }
+    println(resultado)
+
+    // Recorer Listas
+
+    for( valor in semana){
+        println(valor)
+    }
+
+    // me falta poner el de valor y posicion
+
+    // for each
+    val nuevaLista: MutableList<String> = mutableListOf()
+    semana.forEach{ // es algo parecido al filter
+        nuevaLista.add(it + "-")    // cojo los valores de la lista anterior y los meto en esta
+
+    }
+   semana.addAll(nuevaLista) //
+    println(nuevaLista)
+}
+fun rangos (){
+
+    for (x in 0 .. 10){
+        print(x)
+    }
+
+    for (x in 0 until  10){
+        print(x)
+    }
+
+    for (x in 0..10 step 2 )  {
+        print(x)
+    }
+
+    for (x in 10 downTo 0 step 2 )  {
+        print(x)
+    }
+
+    var x=0
+    while(x < 10){
+        println(x)
+        x++
+        //continue
+        //break
+    }
+}
+
+fun nullsafety(){
+
+    var cadena : String?= "Esto es una cadena"
+    // esto me permite ponerla a null
+        cadena = null
+    println(cadena?.length)
+    cadena.let { // se ejecuta si cadena no es nulo
+        println(it) // it almacena el valor de la propia cadena
+        // en java viene a ser (a>10) ? true : false operador ternario
+    } ?:run{ // se ejecutaria cuando cadena sea nulo
+        println(cadena)
+    }
+}
+
+// funciones lamda son las que utiliza el it pero tambien las podemos crear nosotros
+
+fun funcionLambda(){
+
+    //  {parametros1 : tipo , paramero2: tipo -> ( hay que poner la flecha) parametro 1 + pàramerto2 }
+    // de esta manera definimos nuestra funcion lanbda
+    // si nuestra funcion no tiene parametros no hace
+    // ejemplo
+    val listaNumeros = arrayOf(0,1,2,3,4,5)
+    val listaNumerosFiltrados = listaNumeros.filter { miEntero: Int ->
+       // me filtra los numeros mayores de 5 y el 1
+        if (miEntero == 1){
+            return@filter true // para que lo vuelva hacer el filtro que no se acabe aunque encuentre el 1
+        }
+        miEntero > 4 // el resultado que devuelve esta en la ultima linea
+    }
+
+    println(listaNumeros)
+}
+
+
+
 

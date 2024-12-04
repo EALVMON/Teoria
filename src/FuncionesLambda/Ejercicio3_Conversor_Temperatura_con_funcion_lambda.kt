@@ -1,7 +1,7 @@
-package Ejercicios_Profesora
+package FuncionesLambda
 
 fun main(){
-    FuncionesLambda.conversorTemperatura()
+    conversorTemperatura()
 
 }
 
@@ -16,7 +16,7 @@ fun conversorTemperatura() {
     println( "Introduce la Escala Final:" )
     var escalaFianl = readln().toString()
 
-    FuncionesLambda.convertirTemperatura(grados, escalaInicial, escalaFianl)
+    convertirTemperatura(grados, escalaInicial, escalaFianl)
 
 }
 
